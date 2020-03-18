@@ -1,0 +1,151 @@
+body
+{
+  background-color:rgb(27, 27, 27);
+}
+/*Container for bg Image*/
+.bg-image-holder
+{
+
+    /* Full height */
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    border:1px solid black;
+    box-shadow: 10px 10px 20px;
+    position: absolute;
+
+    /* Centers and scale the image */ 
+    overflow: hidden;
+    position: relative;
+    
+
+}
+
+#bg-image
+{
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);/*Used along with overflow hidden to hide blurred edges*/
+  height:100%;
+  width:100%;
+  filter: blur(3px);  
+  -webkit-filter: blur(3px);
+  animation-name: toBlur;
+  animation-duration: 2s;
+  
+}
+
+  /*Location and Weather info*/
+.bg-text 
+{
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    text-align: center;
+    /*
+    background-color: rgba(0, 0, 0, .1);
+    border: 2px outset black;
+    border-radius: 10px;
+    */
+}
+
+/*Location Text*/
+#headerText
+{
+    color:rgba(255, 255, 255, .9);
+    font-family: 'Lobster', cursive;   
+    font-size: 7em; 
+    padding-bottom:20px;
+    border-bottom: 2px solid rgba(255, 255, 255, .9);
+
+}
+
+/*Weather info text*/
+#footerText
+{
+    padding-top: 20px;
+    padding-bottom:10px;
+    color:rgba(255, 255, 255, .9);
+    font-family: 'Lobster', cursive;  
+    font-size: 2.5em;    
+}
+
+/*Information area*/
+.info
+{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  bottom:0;
+  right:0;
+  text-align: right;
+  margin:auto;
+  padding: 5px 30px;
+  height:25px;
+  font-size: 1em;
+  
+  background: rgba(0, 0, 0, .25);
+  border-radius: 3px;
+}
+
+/* ANIMATIONS*/
+
+/*Line under Location*/
+@keyframes slide
+{
+  from {width: 70%;}
+  to{width: 80%;}
+}
+
+  /*Slowly filters background*/
+@keyframes toBlur
+{
+  from {
+    filter:blur(1px);
+    -webkit-filter: blur(1px);
+  }
+  to {
+    filter:blur(4px);
+    -webkit-filter: blur(4px);
+  }
+}
+
+  /*Glowing information text*/
+@keyframes textGlow
+{
+  0%
+  {
+    color:rgba(255, 255, 255, .9)
+  }
+  50%
+  {
+    color:rgba(255, 255, 255, 0.25)
+  }
+  100%
+  {
+    color:rgba(255, 255, 255, .9)
+  }
+}
+  
+  /*Fade in for location*/
+@keyframes fadeIn
+{
+  0%
+  {
+    color:rgba(255, 255, 255, .1);
+    border-bottom: 2px solid rgba(255, 255, 255, .1);
+  }
+  100%
+  {
+    color:rgba(255, 255, 255, .9);
+    border-bottom: 2px solid rgba(255, 255, 255, .9);
+  } 
+}

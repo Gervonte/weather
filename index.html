@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>    
+    <meta charset="utf-8">
+    <link href="css/main.css" rel="stylesheet" type ="text/css">
+    <link href="css/reset.css" rel="stylesheet" type ="text/css">
+    <script src="js/main.js"></script><!--Main Functionality-->
+    <script src="js/openWeather.js"></script><!--Open Weather Functionality-->
+    <script src="js/unSplash.js"></script><!--Unsplash Functionality-->
+    <script src="js/cssControl.js"></script><!--Css Controller -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+<body>
+    <!--Stores the background image-->
+    <div class="bg-image-holder">
+        <img id = "bg-image" src="#">
+    </div>
+
+    <!--Holds the main text including weather information-->
+    <div class="bg-text" id="weatherDiv">
+        <h1 id = "headerText">|</h1>
+        <p id = "footerText">Getting weather data!</p>
+    </div>
+
+    <!--Holds the extra information about the image,last weather update etc.-->
+    <div class ="info" id="infoBox">
+        <p id = "updateText">No weather data!</p>
+    </div>
+
+    <script>
+        //Main Javascript functionality
+        var main = new mainObject();
+        main.run();
+    </script>    
+</body>
+</html>
